@@ -3,6 +3,6 @@
     $_SESSION = [];
     session_destroy();
 
-    header("location: login.php");
+    header("location: landing.php");
     exit;
 ?>

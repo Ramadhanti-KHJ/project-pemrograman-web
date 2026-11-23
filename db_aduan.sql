@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2026 at 11:00 AM
+-- Generation Time: Nov 23, 2026 at 02:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -30,14 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `aduan` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `kategori` enum('Konsultasi','Keluhan','Saran','Whistleblowing') NOT NULL,
-  `prioritas` enum('Tidak Urgent','Urgent','Sangat Urgent') NOT NULL,
+  `kategori` enum('HR Helpdesk','Feedback & Complaints','Whistleblowing') NOT NULL,
+  `prioritas` enum('Not Urgent','Urgent','Very Urgent') NOT NULL DEFAULT 'Not Urgent',
   `judul` varchar(150) NOT NULL,
   `detail_aduan` text NOT NULL,
+  `tanggal_kejadian` date DEFAULT NULL,
   `lampiran` varchar(255) DEFAULT NULL,
   `is_anonim` tinyint(1) DEFAULT 0,
   `tanggal_kirim` datetime DEFAULT current_timestamp(),
-  `status` enum('Menunggu','Diproses','Selesai') DEFAULT 'Menunggu',
+  `status` enum('Pending','In Progress','Resolved') DEFAULT 'Pending',
   `respon_hr` text DEFAULT NULL,
   `tanggal_respon` datetime DEFAULT NULL,
   `nama_pic_hr` varchar(100) DEFAULT NULL
@@ -55,6 +56,13 @@ CREATE TABLE `users` (
   `divisi` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `divisi`, `password`) VALUES
+(1, 'ihsani', 'IT & Engineering', '$2y$10$iUdX9W6sUInPoq/6wK7sSOext.KJhHGt3J8Q9dZuHO/OxIM2iA7aS');
 
 --
 -- Indexes for dumped tables
@@ -88,7 +96,7 @@ ALTER TABLE `aduan`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
