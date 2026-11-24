@@ -112,3 +112,14 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/*
+DUMMY HR RESPONSE THROUGH mysql:
+  UPDATE aduan SET 
+    status = 'Resolved',
+    nama_pic_hr = 'rora',
+    respon_hr = 'Thank you for your feedback. We have reviewed the canteen menu with our catering partner and will introduce healthier, balanced meal options starting next week.',
+    tanggal_respon = NOW()
+  WHERE id = 1;
+note: inside '' is editable according to what's in aduan table.
+*/

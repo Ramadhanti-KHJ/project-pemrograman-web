@@ -22,7 +22,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM aduan WHERE user_id = '$user_id' 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top py-2">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2" href="landing.php">
@@ -47,7 +47,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM aduan WHERE user_id = '$user_id' 
         </div>
     </nav>
 
-    <div class="container py-4">
+    <div class="container my-4 content-box">
         <div class="card mb-4">
             <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
                 <div>
@@ -137,6 +137,12 @@ $query = mysqli_query($koneksi, "SELECT * FROM aduan WHERE user_id = '$user_id' 
             </div>
         <?php endif; ?>
     </div>
+
+    <footer class="mt-auto py-2 border-top text-center">
+        <div class="container">
+            &copy; 2026 HR Helpdesk & WBS &mdash; Internal Employee Consultation & Whistleblowing Portal
+        </div>
+    </footer>
 </body>
 
 </html>

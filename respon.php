@@ -10,7 +10,7 @@ $error = '';
 if (isset($_GET['hapus'])) {
     $id_hapus = (int) $_GET['hapus'];
 
-    $cek = mysqli_query($koneksi, "SELECT lampiran FROM aduan WHERE id = '$id_hapus' AND user_id = '$user_id' AND status = 'Pending'");
+    $cek = mysqli_query($koneksi, "SELECT lampiran FROM aduan WHERE id = '$id_hapus' AND user_id = '$user_id'");
     if (mysqli_num_rows($cek) > 0) {
         $data_hapus = mysqli_fetch_assoc($cek);
 
@@ -19,7 +19,7 @@ if (isset($_GET['hapus'])) {
         }
 
         mysqli_query($koneksi, "DELETE FROM aduan WHERE id = '$id_hapus' AND user_id = '$user_id'");
-        echo "<script>alert('Report has been deleted.'); window.location='respon.php';</script>";
+        echo "<script>('Report has been deleted.'); window.location='respon.php';</script>";
         exit;
     } else {
         $error = "Report cannot be deleted (already processed or not found)";
@@ -75,7 +75,7 @@ if (isset($_POST['update_report'])) {
             $lampiran_sql = !empty($nama_lampiran) ? "'$nama_lampiran'" : "NULL";
             $sql_update   = "UPDATE aduan SET kategori = '$kategori', prioritas = '$prioritas', judul = '$judul', detail_aduan = '$detail_aduan', tanggal_kejadian = $tanggal_kejadian, lampiran = $lampiran_sql, is_anonim = '$is_anonim' WHERE id = '$id_edit' AND user_id = '$user_id'";
             if (mysqli_query($koneksi, $sql_update)) {
-                echo "<script>alert('Report updated successfully.'); window.location='respon.php';</script>";
+                echo "<script>('Report updated successfully.'); window.location='respon.php';</script>";
                 exit;
             } else {
                 $error = "Failed to update report: " . mysqli_error($koneksi);
@@ -125,7 +125,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM aduan WHERE user_id = '$user_id' 
         </div>
     </nav>
 
-    <div class="container py-4" style="max-width: 900px;">
+    <div class="container my-4 content-box">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0">Reports & HR Responses</h4>
             <a href="aduan.php" class="btn btn-primary btn-sm">+ Submit New Report</a>
@@ -204,16 +204,16 @@ $query = mysqli_query($koneksi, "SELECT * FROM aduan WHERE user_id = '$user_id' 
                             </div>
                         <?php else: ?>
                             <div class="text-muted small fst-italic">
-                                No response from HR yet. You can still edit or delete this report while its status is "Pending".
+                                No response from HR yet. You can still edit this report while its status is "Pending".
                             </div>
                         <?php endif; ?>
                     </div>
+                    <div class="card-footer bg-white d-flex justify-content-end gap-2">
                     <?php if ($data['status'] === 'Pending'): ?>
-                        <div class="card-footer bg-white d-flex justify-content-end gap-2">
                             <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal<?= $data['id'] ?>">Edit</button>
-                            <a href="respon.php?hapus=<?= $data['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this report?')">Delete</a>
-                        </div>
                     <?php endif; ?>
+                        <a href="respon.php?hapus=<?= $data['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this report?')">Delete</a>
+                    </div>
                 </div>
 
                 <?php if ($data['status'] === 'Pending'): ?>
@@ -287,5 +287,11 @@ $query = mysqli_query($koneksi, "SELECT * FROM aduan WHERE user_id = '$user_id' 
             </div>
         <?php endif; ?>
     </div>
+
+    <footer class="py-2 border-top text-center">
+        <div class="container">
+            &copy; 2026 HR Helpdesk & WBS &mdash; Internal Employee Consultation & Whistleblowing Portal
+        </div>
+    </footer>
 </body>
 </html>

@@ -13,7 +13,7 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
-<body class="bg-white text-dark">
+<body class="text-dark">
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top py-2">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2">
@@ -48,7 +48,7 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
         </div>
     </nav>
 
-    <section id="beranda" class="py-5 border-bottom">
+    <section id="beranda" class="content-box py-3 my-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7">
@@ -68,20 +68,20 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
                         <div class="d-flex align-items-center gap-3 mb-4">
                             <div>
                                 <h6 class="fw-bold mb-0">Guaranteed Confidentiality</h6>
-                                <small class="text-muted">Anonymous reporting options for sensitive categories</small>
+                                <p class="small text-muted">Anonymous reporting options for sensitive categories</p>
                             </div>
                         </div>
                         <div class="bg-white rounded-3 p-3 shadow-sm mb-3 border">
                             <div class="d-flex justify-content-between align-items-center mb-1">
                                 <span class="badge bg-danger-subtle text-danger">Whistleblowing • Very Urgent</span>
-                                <small class="text-muted">Anonymous</small>
+                                <p class="small text-muted">Anonymous</p>
                             </div>
                             <p class="small text-secondary mb-0">Sender's identity and division are automatically hidden from the reporting system.</p>
                         </div>
                         <div class="bg-white rounded-3 p-3 shadow-sm border">
                             <div class="d-flex justify-content-between align-items-center mb-1">
                                 <span class="badge bg-success-subtle text-success">HR Helpdesk • Resolved</span>
-                                <small class="text-muted">Official HR Response</small>
+                                <p class="small text-muted">Official HR Response</p>
                             </div>
                             <p class="small text-secondary mb-0">Monitor handling status and official HR responses directly from your account.</p>
                         </div>
@@ -91,13 +91,13 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
         </div>
     </section>
 
-    <section id="layanan" class="py-5 bg-light border-top border-bottom">
+    <section id="layanan" class="content-box py-3 my-4">
         <div class="container py-3">
             <h3 class="fw-bold mb-2">Services</h3>
             <p class="text-muted mb-4">Choose the service category that matches your needs or situation.</p>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 p-2">
+                    <div class="card  bg-light h-100 border-0 shadow-sm rounded-4 p-2">
                         <div class="card-body">
                             <h5 class="fw-bold">HR Helpdesk</h5>
                             <p class="text-muted small mb-0">Consultation regarding salary, leave, BPJS, company policies, and employee administration.</p>
@@ -105,7 +105,7 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 p-2">
+                    <div class="card  bg-light h-100 border-0 shadow-sm rounded-4 p-2">
                         <div class="card-body">
                             <h5 class="fw-bold">Suggestions & Complaints</h5>
                             <p class="text-muted small mb-0">Provide constructive feedback or complaints regarding facilities and workplace comfort.</p>
@@ -113,7 +113,7 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 p-2">
+                    <div class="card  bg-light h-100 border-0 shadow-sm rounded-4 p-2">
                         <div class="card-body">
                             <h5 class="fw-bold">Whistleblowing System</h5>
                             <p class="text-muted small mb-0"> Report indications of fraud, abuse of authority, or ethical violations anonymously.</p>
@@ -124,28 +124,27 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
         </div>
     </section>
 
-    <section id="alur" class="py-5 bg-light border-top border-bottom">
+    <section id="alur" class="content-box py-3 my-4">
         <div class="container py-3">
             <h3 class="fw-bold mb-2">Complaint Process</h3>
             <p class="text-muted mb-4">Three simple steps to submit a report and monitor its follow-up.</p>
-
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="border rounded-4 p-4 h-100">
+                    <div class="border rounded-4 p-4 h-100 bg-light">
                         <span class="badge bg-primary rounded-pill mb-3">Step 1</span>
                         <h6 class="fw-bold">Login Employee Account</h6>
                         <p class="text-muted small mb-0">Log in using your registered employee account to access the service form.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="border rounded-4 p-4 h-100">
+                    <div class="border rounded-4 p-4 h-100 bg-light">
                         <span class="badge bg-primary rounded-pill mb-3">Step 2</span>
                         <h6 class="fw-bold">Fill Out Form & Attach Evidence</h6>
                         <p class="text-muted small mb-0">Determine the category, priority level, details of the incident, attachments of photos/videos/audio, and the option for anonymity.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="border rounded-4 p-4 h-100">
+                    <div class="border rounded-4 p-4 h-100 bg-light">
                         <span class="badge bg-primary rounded-pill mb-3">Step 3</span>
                         <h6 class="fw-bold">Monitor HR Response</h6>
                         <p class="text-muted small mb-0">Check the progress of your ticket and read official responses from HR through the HR Response menu.</p>
@@ -155,7 +154,7 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
         </div>
     </section>
 
-    <section id="faq" class="py-5 bg-light border-top">
+    <section id="faq" class="content-box py-3 my-4">
         <div class="container py-3" style="max-width: 800px;">
             <h3 class="fw-bold mb-2">Frequently Asked Questions (FAQ)</h3>
             <p class="text-muted mb-4">Brief information about using the HR Helpdesk & WBS portal.</p>
@@ -196,7 +195,7 @@ $masuk = isset($_SESSION['login']) && $_SESSION['login'] === true;
         </div>
     </section>
 
-    <footer class="py-4 border-top text-center small">
+    <footer class="py-2 border-top text-center">
         <div class="container">
             &copy; 2026 HR Helpdesk & WBS &mdash; Internal Employee Consultation & Whistleblowing Portal
         </div>

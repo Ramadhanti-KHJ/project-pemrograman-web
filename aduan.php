@@ -50,7 +50,7 @@ if (isset($_POST['kirim_aduan'])) {
         $query = "INSERT INTO aduan (user_id, kategori, prioritas, judul, detail_aduan, tanggal_kejadian, lampiran, is_anonim, status) 
                   VALUES ('$user_id', '$kategori', '$prioritas', '$judul', '$detail_aduan', $tanggal_kejadian, $lampiran_sql, '$is_anonim', 'Pending')";
         if (mysqli_query($koneksi, $query)) {
-            echo "<script>alert('Report submitted!'); window.location='respon.php';</script>";
+            echo "<script>a('Report submitted!'); window.location='respon.php';</script>";
             exit;
         } else {
             $error = "Failed to submit the report: " . mysqli_error($koneksi);
@@ -96,7 +96,7 @@ if (isset($_POST['kirim_aduan'])) {
 
     <div class="container py-4" style="max-width: 720px;">
         <div class="card">
-            <div class="card-header bg-white">
+            <div class="card-header">
                 <h5 class="mb-0">Helpdesk and Whistleblowing Form</h5>
             </div>
             <div class="card-body">
@@ -158,5 +158,11 @@ if (isset($_POST['kirim_aduan'])) {
             </div>
         </div>
     </div>
+
+    <footer class="py-2 border-top text-center">
+        <div class="container">
+            &copy; 2026 HR Helpdesk & WBS &mdash; Internal Employee Consultation & Whistleblowing Portal
+        </div>
+    </footer>
 </body>
 </html>

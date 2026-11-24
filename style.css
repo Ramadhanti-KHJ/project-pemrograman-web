@@ -10,10 +10,21 @@ section {
     scroll-margin-top: 25px;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
     background-image: url('bg_image.jpg');
     background-size: cover;
-    background-position: top center;
+    background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -21,12 +32,35 @@ body {
 body,
 body.bg-light {
     font-family: 'Poppins', sans-serif;
+    background-color: rgba(175, 143, 160, 0.35) !important;
+    background-blend-mode: darken;
     color: #2c1d25;
 }
 
-h1, h2, h3, h4, .navbar-brand {
+h1, h2, h3, h4, h5, h6, 
+.navbar-brand, .small, .form-label, .form-text, .text-muted,
+.accordion-button, .form-select, .form-control, .card-header {
     font-family: 'DM Serif Display', serif;
     letter-spacing: 0.3px;
+    color: #7B3F61;
+}
+
+.card-text, .alert{
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 0.3px;
+    color: #2c1d25;
+}
+
+.content-box {
+    width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF1E6;
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1px solid #eadde4;
+    box-shadow: 0 8px 24px #d8c3cf;
+    animation: fadeInUp 0.45s ease-out;
 }
 
 .bg-primary,
@@ -40,6 +74,7 @@ h1, h2, h3, h4, .navbar-brand {
 }
 
 .nav-link {
+    font-family: 'DM Serif Display', serif;
     color: #7B3F61 !important;
     font-weight: 500;
 }
@@ -51,8 +86,17 @@ h1, h2, h3, h4, .navbar-brand {
 }
 
 .btn-primary {
+    font-family: 'DM Serif Display', serif;
     background-color: #7B3F61 !important;
     border-color: #7B3F61 !important;
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.btn-secondary {
+    font-family: 'DM Serif Display', serif;
+    background-color: #E9A6A6 !important;
+    border-color: #E9A6A6 !important;
     color: #ffffff !important;
     font-weight: 500;
 }
@@ -63,6 +107,7 @@ h1, h2, h3, h4, .navbar-brand {
 }
 
 .btn-outline-primary {
+    font-family: 'DM Serif Display', serif;
     color: #7B3F61 !important;
     border-color: #7B3F61 !important;
 }
@@ -72,6 +117,17 @@ h1, h2, h3, h4, .navbar-brand {
     color: #ffffff !important;
 }
 
+.accordion-button:not(.collapsed) {
+    background-color: #f8e5e5 !important;
+    color: #7B3F61 !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:focus {
+    border-color: #E9A6A6 !important;
+    box-shadow: 0 0 0 3px #f5d0d0 !important;
+}
+
 .badge.bg-primary {
     background-color: #E9A6A6 !important;
     color: #2c1d25 !important;
@@ -79,10 +135,10 @@ h1, h2, h3, h4, .navbar-brand {
 }
 
 .card {
-    background-color: #FFF1E6;
+    background-color: #ffffff !important;
     border: 1px solid #eadde4;
     border-radius: 10px;
-    transition: box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
@@ -90,7 +146,7 @@ h1, h2, h3, h4, .navbar-brand {
 }
 
 .card-header {
-    border-bottom: 1px solid #eadde4;
+    border-bottom: 1px solid #E9A6A6;
 }
 
 .form-control:focus,
@@ -100,6 +156,7 @@ h1, h2, h3, h4, .navbar-brand {
 }
 
 footer {
+    font-family: 'DM Serif Display', serif;
     background-color: #7B3F61;
     color: #FFF1E6;
 }

@@ -39,6 +39,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
@@ -47,7 +48,7 @@ if (isset($_POST['login'])) {
         <div class="card">
             <div class="card-body">
                 <h4>Login — Employee HRIS Portal</h4>
-                <p>HR Helpdesk and Whistleblowing</p>
+                <p class="text-muted small">HR Helpdesk and Whistleblowing</p>
 
                 <?php if (isset($_GET['status']) && $_GET['status'] === 'registered'): ?>
                     <div class="alert alert-success">Registration successful, you can now login.</div>
@@ -68,12 +69,13 @@ if (isset($_POST['login'])) {
                     </div>
                     <div class="form-check mb-3">
                         <input type="checkbox" name="remember" class="form-check-input" id="remember">
-                        <label class="form-check-label" for="remember">Remember me</label>
+                        <label class="form-check-label small" for="remember">Remember me</label>
                     </div>
                     <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
                 </form>
 
-                <p class="text-center mt-3 mb-0">Don't have an account? <a href="register.php">Register</a></p>
+                <p class="text-center small mt-3 mb-0">Don't have an account? <a href="register.php">Register</a></p>
+                <p class="text-center text-muted small mt-1 mb-0">HR &amp; Compliance Officer? Use HRIS Admin Console.</p>
             </div>
         </div>
     </div>
