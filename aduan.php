@@ -50,7 +50,7 @@ if (isset($_POST['kirim_aduan'])) {
         $query = "INSERT INTO aduan (user_id, kategori, prioritas, judul, detail_aduan, tanggal_kejadian, lampiran, is_anonim, status) 
                   VALUES ('$user_id', '$kategori', '$prioritas', '$judul', '$detail_aduan', $tanggal_kejadian, $lampiran_sql, '$is_anonim', 'Pending')";
         if (mysqli_query($koneksi, $query)) {
-            echo "<script>a('Report submitted!'); window.location='respon.php';</script>";
+            echo "<script>('Report submitted!'); window.location='respon.php';</script>";
             exit;
         } else {
             $error = "Failed to submit the report: " . mysqli_error($koneksi);
